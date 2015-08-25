@@ -1,0 +1,36 @@
+<li>
+    <a <%= 'class=active' if controller_name == 'codes' %> href="<%= codes_path %>">
+        <i class="fa fa-key"></i>
+        <span>PIN Codes</span>
+    </a>
+</li>
+<li>
+    <a <%= 'class=active' if controller_name == 'schedules' %> href="<%= schedules_path %>">
+        <i class="fa fa-clock-o"></i>
+        <span>Schedules</span>
+    </a>
+</li>
+<li>
+    <a <%= 'class=active' if controller_name == 'destinations' %> href="<%= destinations_path %>">
+        <i class="fa fa-phone"></i>
+        <span>Phones</span>
+    </a>
+</li>
+<li>
+    <a <%= 'class=active' if controller_name == 'doors' %> href="<%= door_path %>">
+        <i class="fa fa-cog"></i>
+        <span>Account</span>
+    </a>
+</li>
+<li>
+    <a href="mailto:support@doorbuzzing.com">
+        <i class="fa fa-envelope"></i>
+        <span>Support</span>
+    </a>
+</li>
+<li>
+    <a href="<%= destroy_user_session_path %>" data-method="delete">
+        <i class="fa fa-sign-out"></i>
+        <span>Log Out</span>
+    </a>
+</li>

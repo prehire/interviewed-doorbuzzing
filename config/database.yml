@@ -1,0 +1,22 @@
+default: &default
+  host: localhost
+  encoding: utf8
+  min_messages: warning
+  adapter: postgresql
+
+development:
+  <<: *default
+  database: int-doorbuzzing-development
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: int-doorbuzzing-test
+
+production:
+  <<: *default
+  database: int-doorbuzzing-production
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>

@@ -1,0 +1,24 @@
+<section class="panel">
+  <header class="panel-heading">
+     Permanent number
+  </header>
+  <div class="panel-body">
+    <h2>
+      <%= @user.phone_inbound.phony_formatted(:format => :international, :spaces => '-') %>
+    </h2>
+    <p>
+      This is your permanent DoorBuzzing forwarding phone number.  Ask your building manager to update the intercom settings
+      to this number.
+    </p>    
+  </div>
+</section>
+
+<section class="panel">
+  <header class="panel-heading">
+      Account Settings
+  </header>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</section>
+

@@ -1,0 +1,45 @@
+<%= form_for(@user, url: 'door', html: {class: 'form-horizontal bucket-form'}) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="col-sm-3 control-label">
+      <label for="user_dtmf">Entry number</label>
+    </div>
+    <div class="col-sm-9">
+      <%= f.text_field(:dtmf, {class: 'form-control', style: 'max-width: 100px'}) %>
+      <p class="help-block">The number you normally enter to unlock the door (usually 6 or 9)</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3 control-label">
+      <label for="user_timezone">Timezone</label>
+    </div>
+    <div class="col-sm-9 col-md-6 col-lg-4">
+      <%= f.select(
+          :timezone,
+          options_for_select(ActiveSupport::TimeZone.zones_map.values.sort_by{|zone| zone.utc_offset}.map{|zone| ["#{zone.name} (#{zone.utc_offset/3600})", zone.name]}, @user.timezone),
+          {include_blank: false},
+          {class: 'form-control'}
+        )
+      %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <%= f.submit(class: 'btn btn-primary', value: 'Save') %>
+    </div>
+  </div>
+
+<% end %>

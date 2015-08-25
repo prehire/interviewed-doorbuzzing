@@ -1,0 +1,44 @@
+<section class="panel">
+  <header class="panel-heading">
+      Phone Destinations
+  </header>
+  <div class="panel-body">
+  <div class="adv-table">
+  <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline" role="grid">
+
+  <p>
+    <%= link_to 'Create a new phone destination', new_destination_path, class: "btn btn-default" %>
+  </p>
+      
+  <table class="display table table-advance table-bordered table-striped dataTable" id="dynamic-table" aria-describedby="dynamic-table_info">
+  <thead>
+  <tr role="row">
+    <th></th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Sequence</th>
+    <th></th>
+  </thead>
+  <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+    <% @destinations.each do |destination| %>
+      <tr>
+        <td><%= link_to 'Edit', destination_path(destination), class: "btn btn-default" %></td>
+        <td><%= destination.name %></td>
+        <td><%= destination.phone.phony_formatted(:format => :international, :spaces => '-') %></td>
+        <td><%= destination.sequence %></td>
+        <td><%= link_to 'Delete', destination, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+  </table>
+
+  <p>
+    Phone destinations are the numbers that will be called when a visitor needs entry.  Phone destinations get called in sequential order by default; you can also make multiple phones ring simultaneously by setting the same sequence number.
+  </p>
+
+  </div>
+  </div>
+  </div>
+</section>

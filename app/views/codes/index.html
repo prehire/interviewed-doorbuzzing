@@ -1,0 +1,43 @@
+<section class="panel">
+  <header class="panel-heading">
+      PIN Codes
+  </header>
+  <div class="panel-body">
+  <div class="adv-table">
+  <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline" role="grid">
+
+  <p>
+    <%= link_to 'Create a new code', new_code_path, class: "btn btn-default" %>
+  </p>
+      
+  <table class="display table table-advance table-bordered table-striped dataTable" id="dynamic-table" aria-describedby="dynamic-table_info">
+  <thead>
+  <tr role="row">
+    <th></th>
+    <th>Name</th>
+    <th>PIN</th>
+    <th></th>
+  </thead>
+  <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+    <% @codes.each do |code| %>
+      <tr>
+        <td><%= link_to 'Edit', code_path(code), class: "btn btn-default" %></td>
+        <td><%= code.name %></td>
+        <td><%= code.pin %></td>
+        <td><%= link_to 'Delete', code, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+  </table>
+
+  <p>
+    Once you create a PIN Code, visitors will be prompted to either enter their code or press 0 if they don't have one. Visitors without a code will proceed on to the Phone Destinations you set.
+  </p>
+
+
+  </div>
+  </div>
+  </div>
+</section>

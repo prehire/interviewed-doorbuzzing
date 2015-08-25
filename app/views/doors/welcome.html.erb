@@ -1,0 +1,66 @@
+<div class="form-signin">
+
+  <h2 class="form-signin-heading">Choose number</h2>
+  <div class="login-wrap">
+
+      <div class="user-login-info">
+
+        <% if flash[:alert].present? %>
+          <p class="alert alert-danger">
+            <%= flash[:alert] %>
+          </p>
+        <% end %>
+
+        <% if @available_phone_numbers.present? && @available_phone_numbers.size > 0 %>
+          <p>
+            We're about to assign your new forwarding phone number.  Please choose a number below.  You can refresh
+             if you want more options.
+          </p>
+        <% elsif params.include? :area_code %>
+          <p class="alert alert-danger">
+            No numbers matched this search criteria. Please revise your search.
+          </p>
+        <% else %>
+          <p>
+            Please enter your information to search for available numbers.
+          </p>
+        <% end %>
+
+        <%= form_tag(welcome_door_path, method: 'get') do %>
+
+          <label>Country</label>
+          <%= render "country_code" %>
+
+          <label>Area code <span class="small text-muted">(optional)</span></label>
+          <input type="text" name="area_code" placeholder="###" value="<%= params[:area_code] %>" class="form-control">
+
+          <button class="btn btn-sm btn-danger btn-block" type="submit">Refresh list</button>
+
+        <% end %>
+
+      </div>
+
+
+      <% if @available_phone_numbers.present? && @available_phone_numbers.size > 0 %>
+        <table class="table table-condensed">
+          <% @available_phone_numbers.each do |twilio_resource| %>
+            <tr>
+              <td>
+                <%= twilio_resource.phone_number.phony_formatted(:format => :international, :spaces => '-') %>
+              </td>
+              <td>
+                <%= form_tag(assign_number_door_path) do %>
+                  <input type="hidden" name="phone_inbound" value="<%= twilio_resource.phone_number %>">
+                  <input type="hidden" name="user_country_code" value="<%= params[:user_country_code] || session[:compatibility_check_country_code] %>">
+                  <input type="submit" class="btn btn-sm btn-primary" value="Choose">                    
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+
+
+  </div>
+
+</div>

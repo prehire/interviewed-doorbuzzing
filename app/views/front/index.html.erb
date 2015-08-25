@@ -1,0 +1,526 @@
+  <header>
+        
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="fa fa-bars fa-lg"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <img src="/img/eco/logo.png" alt="" class="logo">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">how it works</a>
+                        </li>
+                        <li><a href="#features">features</a>
+                        </li>
+                        <li><a href="#screens">pricing</a>
+                        </li>
+                        <li><a class="getApp" href="#getApp">try it</a>
+                        </li>
+
+                        <li>
+							<%= link_to("Log in", new_user_session_path) %>
+						</li>
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-->
+        </nav>
+
+        <div class="container hero">
+            <div class="row">
+                <div class="col-sm-6 left">
+                    <div class="caption">
+                        Give your door intercom a smart pill
+                    </div>
+                    <div class="small-caption">
+                        <p>
+                            Does your door intercom call your phone?  What if it called a computer, instead?  That's DoorBuzzing.
+                        </p>
+
+                        <p>
+                        </p>
+                            DoorBuzzing answers the phone and does smart
+                            things like: open automatically during busines hours, ask for a PIN, 
+                            call multiple people, or send an SMS alert.  You make the rules.
+                       </p>
+
+                    </div>
+
+                    <%= form_tag(check_compatibility_path) %>
+                        <div class="form-group">
+                            <input name="phone" type="text" class="form-control" placeholder="### Test phone number ###">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary inverse btn-lg">Check compatibility</button>
+                    </form>
+
+                </div>
+
+                <div class="col-sm-6 right">
+                    <iframe style="max-width: 100%;" width="560" height="310" src="https://www.youtube.com/embed/br2vJa3QA0s?rel=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <div class="wrapper">
+
+        <section id="about">
+            <div class="container">
+                
+                <div class="section-heading">
+                    <h1>How it works</h1>
+                    <div class="divider"></div>
+                    <p>Change one phone number and you're done</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="about-item  ">
+                            <i class="fa fa-check fa-2x"></i>
+                            <h3>Sign up</h3>
+                            <p>
+                            	Upon sign up, we'll assign you a new, permanent DoorBuzzing
+                            	phone number.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="about-item  ">
+                            <i class="fa fa-cog fa-2x"></i>
+                            <h3>Set preferences</h3>
+                            <p>
+                            	Create PIN codes for guests and set ring groups 
+                            	for inbound call forwarding.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="about-item  ">
+                            <i class="fa fa-phone fa-2x"></i>
+                            <h3>Tell building</h3>
+                            <p>
+                            	Give your building manager your new DoorBuzzing phone number for the door intercom.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6" >
+                        <div class="about-item  ">
+                            <i class="fa fa-smile-o fa-2x"></i>
+                            <h3>Enjoy</h3>
+                            <p>
+                            	Enjoy your smart new doorman. Update settings any time from your
+                            	mobile or computer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-heading">
+                    <h1>Features</h1>
+                    <div class="divider"></div>
+                    <p>It does everything you could want, except receive packages</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-4  ">
+                        <div class="media media-left-eco feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-lock fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Secure</h3>
+                                Fully-encrypted end-to-end
+                            </div>
+                        </div>
+                        <div class="media media-left-eco feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-bolt fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">No Hardware</h3>
+                                Uses your existing door intercom
+                            </div>
+                        </div>
+                        <div class="media media-left-eco feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-key fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Guest Entry</h3>
+                                Set unique PIN codes
+                            </div>
+                        </div>
+                        <div class="media media-left-eco feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-phone fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Multiple Phones</h3>
+                                Forward calls to multiple recipients
+                            </div>
+                        </div>
+                        <div class="media media-left-eco feature">
+                            <a class="pull-right" href="#">
+                                <i class="fa fa-users fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Ring Groups</h3>
+                                Sequential or simultaneous call forwarding
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4" >
+                        <img src="img/eco/iphone-eco.png" class="img-responsive  " alt="">
+                    </div>
+                    <div class="col-md-4 col-sm-4  ">
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-building-o fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Automatic Open</h3>
+                                Schedule open door hours
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-comment fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">SMS Alerts</h3>
+                                Notify when PIN code is used
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-list fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Access Logs</h3>
+                                Store entry logs for security
+                            </div>
+                        </div>
+                        <div class="media feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-server fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">Emergency Backup</h3>
+                                Calls forward during outages
+                            </div>
+                        </div>
+                        <div class="media active feature">
+                            <a class="pull-left" href="#">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">And much more!</h3>
+                                Try it now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="container">
+                <div class="section-heading inverse  ">
+                    <h1>Reviews</h1>
+                    <div class="divider"></div>
+                    <p>See what our users are saying about us</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-push-1  ">
+                        <div class="review-filtering">
+                            <div class="review">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="review-person">
+                                            <img src="/images/head-avanti.jpg" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="review-comment">
+                                            <h3>“I literally use it every day. It's so much better than having to manually buzz people in every time.”</h3>
+                                            <p>
+                                                - Avanti Mankar
+                                                <span>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star-half-o fa-lg"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review rollitin">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="review-person">
+                                            <img src="/images/head-lanae.jpg" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="review-comment">
+                                            <h3>“I wish I'd found this a year ago for our old office. It would have saved so much time.”</h3>
+                                            <p>
+                                                - Lanae Joy
+                                                <span>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="review rollitin">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="review-person">
+                                            <img src="/images/head-datha.jpg" alt="" class="img-responsive">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="review-comment">
+                                            <h3>“I use it with all my airbnb-ers so they can let themselves in without calling me.”</h3>
+                                            <p>
+                                                - Datha Santomieri
+                                                <span>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                    <i class="fa fa-star fa-lg"></i>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screens">
+            <div class="container">
+
+                <div class="section-heading  ">
+                    <h1>Pricing</h1>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                    <div class="pricing-table">
+                        <div class="pricing-head">
+                            <h1> starter </h1>
+
+                        </div>
+                        <div class="pricing-quote">
+                            $5
+                            <p>Per Month</p>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check"></i> Up to 5 custom PIN codes</li>
+                            <li><i class="fa fa-check"></i> Up to 3 phones in ring group</li>
+                        </ul>
+                        <div class="price-actions">
+                            <a href="<%= check_compatibility_path %>" class="btn btn-primary">Purchase This Plan</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                    <div class="pricing-table most-popular">
+                        <div class="pricing-head">
+                            <h1> Premium </h1>
+
+                        </div>
+                        <div class="pricing-quote">
+                            $20
+                            <p>Per Month</p>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check"></i> Schedule automatic open hours</li>
+                            <li><i class="fa fa-check"></i> Unlimited PIN codes</li>
+                            <li><i class="fa fa-check"></i> Unlimited ring groups</li>
+                            <li><i class="fa fa-check"></i> Customize message prompts</li>
+                            <li><i class="fa fa-check"></i> Same-day technical support</li>
+                        </ul>
+                        <div class="price-actions">
+                            <a href="<%= check_compatibility_path %>" class="btn btn-primary">Purchase This Plan</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-4">
+                    <div class="pricing-table">
+                        <div class="pricing-head">
+                            <h1> Enterprise  </h1>
+                        </div>
+                        <div class="pricing-quote">
+                            $50
+                            <p>Per Month</p>
+                        </div>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check"></i> 24/7 emergency technical support</li>
+                            <li><i class="fa fa-check"></i> 36-month security log</li>
+                            <li><i class="fa fa-check"></i> Multi-user account management</li>
+                        </ul>
+                        <div class="price-actions">
+                            <a href="<%= check_compatibility_path %>" class="btn btn-primary">Purchase This Plan</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="getApp">
+            <div class="container-fluid">
+                <div class="section-heading inverse  ">
+                    <h1>Try It</h1>
+                    <div class="divider"></div>
+                    <p>Test your phone number to get started!</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        <div class="platforms">
+                            <%= form_tag(check_compatibility_path) %>
+                                <input name="phone"  type="text" class="form-control" style="margin-bottom:1em;" placeholder="Test your phone number">
+
+                                <button type="submit" class="btn btn-primary inverse btn-lg">Check compatibility</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="support" class="doublediagonal">
+            <div class="container">
+                <div class="section-heading  ">
+                    <h1>Support</h1>
+                    <div class="divider"></div>
+                    <p>For more info and support, contact us!</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8  ">
+                                <form id="form2" name="form2" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate="" action="https://darrennix.wufoo.com/forms/m1n138111q7ynhj/#public">
+                                    <div class="form-group">
+                                        <input id="Field1" name="Field1" type="text" class="form-control" tabindex="1"  placeholder="Your name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="Field3" name="Field3" type="email" spellcheck="false" maxlength="255" tabindex="3" class="form-control" placeholder="Your email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea id="Field4"  name="Field4" cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+
+                                    <div style="display: none">
+                                        <label for="comment">Do Not Fill This Out</label>
+                                        <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                                        <input type="hidden" id="idstamp" name="idstamp" value="3OLF8ESocpI5eS5hyK8MtgTrgBZH5H7hHEWny3cH8fY=">
+                                    </div>
+                                </form>
+
+
+                            </div>
+                            <div class="col-md-4 col-sm-4 contact-details  ">
+                                <div class="media">
+                                    <a class="pull-left" href="#" >
+                                        <i class="fa fa-map-marker fa-2x"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">San Francisco, California</h4>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a class="pull-left" href="#" >
+                                        <i class="fa fa-envelope fa-2x"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            <a href="mailto:support@oleose.com">support@doorbuzzing.com</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a class="pull-left" href="#" >
+                                        <i class="fa fa-phone fa-2x"></i>
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">+1-888-431-8770</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <a href="#" class=" ">
+                    <img src="/img/eco/logo.png" alt="" class="logo">
+                </a>
+                <div class="social">
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-share-button" data-href="https://www.doorbuzzing.com" data-layout="button_count"></div>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Place this tag where you want the share button to render. -->
+<div class="g-plus" data-action="share" data-annotation="bubble"></div>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="doorbuzzing">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+

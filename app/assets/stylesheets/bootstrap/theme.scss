@@ -1,0 +1,18 @@
+/* Available bootstrap theme variables are defined at http://getbootstrap.com/customize/#colors */
+
+
+
+/* Typography */
+$font-size-base: 16px;
+
+/* Scaffolding */
+$body-bg: #f1f2f7;
+
+
+/* Navbar */
+$navbar-inverse-bg: #1fb5ad;
+$navbar-inverse-color: #ffffff;
+$navbar-inverse-border: #188983;
+$navbar-inverse-toggle-border-color: #188983;
+$navbar-inverse-link-color: #ffffff;
+$navbar-inverse-link-hover-bg: darken($navbar-inverse-bg, 10%);

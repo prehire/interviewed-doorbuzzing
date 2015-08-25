@@ -1,0 +1,37 @@
+<select name="user_country_code" id="country-selectize" placeholder="Find your country code" value="<%= params[:user_country_code] %>"></select>
+
+<script>
+
+$(function() {
+
+
+var twilio = twilio || {};
+twilio.buyNumber = twilio.buyNumber || {};
+twilio.buyNumber.countryData = <%= raw User::COUNTRY_CODES.to_json %>;
+
+
+    var array_values = new Array();
+    for (var key in twilio.buyNumber.countryData) {
+        array_values.push(twilio.buyNumber.countryData[key]);
+    }
+
+    var $select = $('#country-selectize').selectize({
+        valueField: 'isoCode',
+        labelField: 'friendlyName',
+        searchField: ['friendlyName'],
+        options: array_values,
+        render: {
+            item: function(item, escape) {
+                return '<div class="selectize-flag"><div class="flag-14 '+ escape(item.isoCode.toLowerCase()) +'"></div> <div class="friendlyName">'+ escape(item.friendlyName) +'</div> <div class="countryCode text-muted small">('+ escape(item.countryCode) +')</div></div>';
+            },
+            option: function(item, escape) {
+                return '<div class="selectize-flag"><div class="flag-14 '+ escape(item.isoCode.toLowerCase()) +'"></div> <div class="friendlyName">'+ escape(item.friendlyName) +'</div> <div class="countryCode text-muted small">('+ escape(item.countryCode) +')</div></div>';
+            }
+        }
+    });
+
+    var selectize = $select[0].selectize;
+    selectize.setValue('<%= params[:user_country_code] || session[:compatibility_check_country_code] %>');
+
+});
+</script>

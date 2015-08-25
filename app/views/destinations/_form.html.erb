@@ -1,0 +1,51 @@
+<p>
+  Phone destinations are the numbers that will be called when a visitor needs entry.  Phone destinations get called in sequential order by default; you can also make multiple phones ring simultaneously by setting the same sequence number.
+</p>
+
+<%= form_for(@destination, html: {class: 'form-horizontal'}) do |f| %>
+  <% if @destination.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@destination.errors.count, "error") %> prohibited this destination from being saved:</h2>
+
+      <ul>
+      <% @destination.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      <label for="destination_name">Name</label>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field(:name, {class: 'form-control'}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      <label for="destination_phone">Phone</label>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field(:phone, {class: 'form-control'}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label">
+      <label for="destination_sequence">Sequence</label>
+    </div>
+    <div class="col-sm-4">
+      <%= f.text_field(:sequence, {class: 'form-control'}) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <%= f.submit(class: 'btn btn-primary', value: 'Save') %>
+    </div>
+  </div>
+
+<% end %>

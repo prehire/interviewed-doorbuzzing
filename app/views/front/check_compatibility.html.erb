@@ -1,0 +1,29 @@
+<%= form_tag(check_compatibility_path, class: 'form-signin') %>
+
+  <h2 class="form-signin-heading">check compatibility</h2>
+  <div class="login-wrap">
+
+      <div class="user-login-info">
+
+        <% if flash[:alert] %>
+          <label>Uh oh.</label>
+          <p class="alert alert-danger"><%= flash[:alert] %></p>
+        <% end %>
+
+        <label>Country</label>
+        <%= render "country_code" %>
+
+        <label>Phone number</label>
+        <input type="text" name="phone" placeholder="###-###-####" value="<%= params[:phone] %>" class="form-control">
+      </div>
+
+      <button class="btn btn-lg btn-login btn-block" type="submit">Check</button>
+
+
+      <center style="margin-top: 20px;">
+        <a href='https://www.expeditedssl.com/simple-ssl-scanner/scan?target_domain=www.doorbuzzing.com' target='_blank'><img src='https://www.expeditedssl.com/ssl-secure-badge.png'  alt='Expedited SSL Scanner'></a>
+      </center>                                  
+
+  </div>
+
+</form>

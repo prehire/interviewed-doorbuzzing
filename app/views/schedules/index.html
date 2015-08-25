@@ -1,0 +1,44 @@
+<section class="panel">
+  <header class="panel-heading">
+      Schedules
+  </header>
+  <div class="panel-body">
+  <div class="adv-table">
+  <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline" role="grid">
+
+  <p>
+    <%= link_to 'Create a new schedule', new_schedule_path, class: "btn btn-default" %>
+  </p>
+      
+  <table class="display table table-advance table-bordered table-striped dataTable" id="dynamic-table" aria-describedby="dynamic-table_info">
+  <thead>
+  <tr role="row">
+    <th></th>
+      <th>Day of week</th>
+      <th>Start time</th>
+      <th>End time</th>
+    <th></th>
+  </thead>
+  <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= link_to 'Edit', schedule_path(schedule), class: "btn btn-default" %></td>
+        <td><%= Date::DAYNAMES[schedule.day_of_week] %></td>
+        <td><%= schedule.start_time.strftime("%H:%M (%I:%M %p)") %></td>
+        <td><%= schedule.end_time.strftime("%H:%M (%I:%M %p)") %></td>
+        <td><%= link_to 'Delete', schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+  </table>
+
+  <p>
+    During scheduled hours, your door will automatically unlock without requesting a PIN Code or calling phone destinations.
+  </p>
+
+  </div>
+  </div>
+  </div>
+</section>
