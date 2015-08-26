@@ -1,11 +1,10 @@
 class AddDoorFields < ActiveRecord::Migration
-
   def change
     add_column :users, :phone_inbound, :string
     add_column :users, :plan_name, :string
     add_column :users, :dtmf, :string
     add_column :users, :timezone, :string
- 
+
     create_table(:destinations) do |t|
       t.integer :user_id
       t.string :name
@@ -35,7 +34,5 @@ class AddDoorFields < ActiveRecord::Migration
     end
     add_index :codes, :user_id
     add_foreign_key :codes, :users
-
   end
-
 end

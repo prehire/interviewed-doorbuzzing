@@ -1,7 +1,6 @@
 class CodesController < ApplicationController
-
   before_filter :authenticate_user!
-  
+
   before_action :set_code, only: [:show, :update, :destroy]
 
   # GET /codes
@@ -25,9 +24,9 @@ class CodesController < ApplicationController
   def create
     @code = current_user.codes.new(code_params)
     if @code.save
-      redirect_to codes_path, notice: 'Code was successfully created.' 
+      redirect_to codes_path, notice: 'Code was successfully created.'
     else
-      render :new 
+      render :new
     end
   end
 
@@ -35,9 +34,9 @@ class CodesController < ApplicationController
   # PATCH/PUT /codes/1.json
   def update
     if @code.update(code_params)
-      redirect_to codes_path, notice: 'Code was successfully updated.' 
+      redirect_to codes_path, notice: 'Code was successfully updated.'
     else
-      render :show 
+      render :show
     end
   end
 
@@ -49,16 +48,17 @@ class CodesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_code
-      @code = current_user.codes.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def code_params
-      params.require(:code).permit(
-        :name,
-        :pin,
-      )    
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_code
+    @code = current_user.codes.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def code_params
+    params.require(:code).permit(
+      :name,
+      :pin
+    )
+  end
 end

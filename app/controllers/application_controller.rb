@@ -5,11 +5,10 @@ class ApplicationController < ActionController::Base
 
   # Devise
   def after_sign_in_path_for(resource)
-  	if current_user.phone_inbound.blank?
-  		welcome_door_path
-  	else
-	    request.env['omniauth.origin'] || stored_location_for(resource) || door_path
-  	end
+    if current_user.phone_inbound.blank?
+      welcome_door_path
+    else
+      request.env['omniauth.origin'] || stored_location_for(resource) || door_path
+    end
   end
-
 end

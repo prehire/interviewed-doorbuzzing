@@ -1,7 +1,6 @@
 class SchedulesController < ApplicationController
-
   before_filter :authenticate_user!
-  
+
   before_action :set_schedule, only: [:show, :update, :destroy]
 
   # GET /schedules
@@ -25,9 +24,9 @@ class SchedulesController < ApplicationController
   def create
     @schedule = current_user.schedules.new(schedule_params)
     if @schedule.save
-      redirect_to schedules_path, notice: 'Schedule was successfully created.' 
+      redirect_to schedules_path, notice: 'Schedule was successfully created.'
     else
-      render :new 
+      render :new
     end
   end
 
@@ -35,9 +34,9 @@ class SchedulesController < ApplicationController
   # PATCH/PUT /schedules/1.json
   def update
     if @schedule.update(schedule_params)
-      redirect_to schedules_path, notice: 'Schedule was successfully updated.' 
+      redirect_to schedules_path, notice: 'Schedule was successfully updated.'
     else
-      render :show 
+      render :show
     end
   end
 
@@ -49,17 +48,18 @@ class SchedulesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_schedule
-      @schedule = current_user.schedules.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def schedule_params
-      params.require(:schedule).permit(
-        :start_time,
-        :end_time,
-        :day_of_week,
-      )    
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_schedule
+    @schedule = current_user.schedules.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def schedule_params
+    params.require(:schedule).permit(
+      :start_time,
+      :end_time,
+      :day_of_week
+    )
+  end
 end

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgress
@@ -65,8 +64,8 @@ group :development, :test do
 end
 
 group :production do
-	# Heroku
-	gem 'rails_12factor'
+  # Heroku
+  gem 'rails_12factor'
 end
 
-ruby "2.2.1"
+ruby '2.2.1'

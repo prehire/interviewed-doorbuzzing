@@ -7,6 +7,5 @@ class Destination < ActiveRecord::Base
   validates :name, presence: true
   validates :sequence, presence: true, numericality: true
   validates :phone, presence: true
-  validates_plausible_phone :phone, country_code: Proc.new { |e| e.user.country_code } 
-
+  validates_plausible_phone :phone, country_code: proc { |e| e.user.country_code }
 end
